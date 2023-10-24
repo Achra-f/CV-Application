@@ -1,16 +1,31 @@
-import React from 'react';
+import React from "react";
 
-const EducationForm = ({ onChange }) => {
+const EducationForm = ({ value, onChange }) => {
   return (
-    <div className="form-section">
-      <h2>Educational Experience</h2>
-      <form>
+    <div className="flex flex-col">
+      <h2 className="flex justify-center">Educational Experience</h2>
+      <form className="flex flex-col">
         <label>School Name:</label>
-        <input type="text" onChange={(e) => onChange({ school: e.target.value })} />
+        <input
+          type="text"
+          value={value.school}
+          placeholder="School Name"
+          onChange={(e) => onChange({ school: e.target.value })}
+        />
         <label>Title of Study:</label>
-        <input type="text" onChange={(e) => onChange({ study: e.target.value })} />
+        <input
+          type="text"
+          placeholder="Title of Study"
+          value={value.study}
+          onChange={(e) => onChange({ study: e.target.value })}
+        />
         <label>Date of Study:</label>
-        <input type="text" onChange={(e) => onChange({ studyDate: e.target.value })} />
+        <input
+          placeholder="Date of Study"
+          type="text"
+          value={value.studyDate}
+          onChange={(e) => onChange({ studyDate: e.target.value })}
+        />
       </form>
     </div>
   );
