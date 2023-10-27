@@ -26,6 +26,13 @@ const InformationForm = ({ value, onChange }) => {
           value={value.phone}
           onChange={(e) => onChange({ phone: e.target.value })}
         />
+        <label>Address:</label>
+        <input
+          type="text"
+          placeholder="Address"
+          value={value.address}
+          onChange={(e) => onChange({ address: e.target.value })}
+        />
       </form>
     </div>
   );

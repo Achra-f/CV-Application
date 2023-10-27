@@ -5,9 +5,10 @@ import Experience from "./experience";
 
 const App = () => {
   const [information, setInformation] = useState({
-    name: "John Doe",
+    name: "Jimmy McGill",
     email: "johndoe@example.com",
     phone: "123-456-7890",
+    address: "London, UK",
   });
   const [education, setEducation] = useState({
     school: "Example University",
@@ -49,20 +50,42 @@ const App = () => {
           />
         </div>
 
-        <div className="flex-1 p-4 bg-gray-200">
-          <h2 className="text-lg font-semibold mb-4">Preview:</h2>
-          <div className="mb-2">
-            <strong className="text-blue-700">General Information:</strong>{" "}
-            {information.name}, {information.email}, {information.phone}
+        <div className="flex-1 p-4 bg-grayBlue text-white">
+          <div className="mb-2 flex flex-col items-center justify-center gap-4">
+            <div className="text-4xl font-bold">{information.name}</div>
+            <div className="flex gap-4 text-[#5ce1e6] font-semibold text-md">
+              <div className="flex justify-center items-center gap-2">
+                <i class="fa-solid fa-envelope"></i>
+                <div>{information.email}</div>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <i class="fa-solid fa-phone"></i> <div>{information.phone}</div>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>{information.address}</div>
+              </div>
+            </div>
           </div>
           <div className="mb-2">
-            <strong className="text-blue-700">Educational Experience:</strong>{" "}
-            {education.school}, {education.study}, {education.studyDate}
+            <div className="flex text-2xl font-semibold bg-slate300 text-[#1e1c27] justify-center items-center rounded-md">
+              Education
+            </div>
+            <div className="flex justify-evenly items-center">
+              <div>
+                <div>{education.studyDate}</div>
+              </div>
+              <div>
+                <div>{education.school}</div>
+                <div> {education.study} </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong className="text-blue-700">Practical Experience:</strong>{" "}
-            {experience.company}, {experience.position}, {experience.responsibilities}, {experience.startDate}{" "}
-            - {experience.endDate}
+          <div className="mb-3">
+            <div className="flex text-2xl font-semibold bg-slate300 text-[#1e1c27] justify-center items-center rounded-md">Experience</div>
+            {experience.company}, {experience.position},{" "}
+            {experience.responsibilities}, {experience.startDate} -{" "}
+            {experience.endDate}
           </div>
         </div>
       </div>
